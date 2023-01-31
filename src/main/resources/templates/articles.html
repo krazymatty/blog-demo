@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Article</title>
+  </head>
+  <body>
+    <a href="/create-article"><button>Create Article</button></a>
+    <div th:each="article : ${articles}">
+      <a th:href="@{/article/{id}(id=${article.id})}">
+        <h1 th:text="${article.title}"></h1
+      ></a>
+      <p>Author: <span th:text="${article.author}"></span></p>
+      <p>Date Written: <span th:text="${article.date}"></span></p>
+      <hr />
+    </div>
+  </body>
+</html>

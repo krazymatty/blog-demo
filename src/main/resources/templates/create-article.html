@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xlmns:th="http://thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="post" id="blogForm">
+      Author: <input type="text" th:field="${article.author}" /> Title:
+      <input type="text" th:field="${article.title}" /><br \ />
+
+      Content:
+      <textarea
+        name="content"
+        form="blogForm"
+        cols="30"
+        rows="10"
+        th:field="${article.content}"
+      ></textarea>
+      <input type="submit" />
+    </form>
+  </body>
+</html>
